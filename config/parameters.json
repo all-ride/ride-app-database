@@ -1,0 +1,51 @@
+{
+    "database": {
+        "driver": {
+            "mysql": "pallo\\library\\database\\driver\\PdoDriver",
+            "pgsql": "pallo\\library\\database\\driver\\PostgresPdoDriver",
+            "sqlite": "pallo\\library\\database\\driver\\PdoDriver"
+        },
+        "mysql": {
+            "types": {
+                "string": "varchar(255)",
+                "text": "text",
+                "serialize": "text",
+                "boolean": "tinyint(1)",
+                "integer": "int(11)",
+                "float": "float",
+                "date": "int(11) unsigned",
+                "datetime": "int(11) unsigned",
+                "email": "varchar(255)",
+                "website": "varchar(255)",
+                "password": "varchar(255)",
+                "wysiwyg": "text",
+                "file": "varchar(255)",
+                "image": "varchar(255)",
+                "binary": "longblob",
+                "pk": "int(11) unsigned",
+                "fk": "int(11) unsigned"
+            }
+        },
+        "sqlite": {
+            "types": {
+                "string": "text",
+                "text": "text",
+                "serialize": "text",
+                "boolean": "integer",
+                "integer": "integer",
+                "float": "real",
+                "date": "integer",
+                "datetime": "integer",
+                "email": "text",
+                "website": "text",
+                "password": "text",
+                "wysiwyg": "text",
+                "file": "text",
+                "image": "text",
+                "binary": "blob",
+                "pk": "integer",
+                "fk": "integer"
+            }
+        }
+    }
+}
