@@ -1,0 +1,52 @@
+{
+    "dependencies": [
+        {
+            "interfaces": "pallo\\library\\database\\DatabaseManager",
+            "class": "pallo\\application\\database\\DatabaseManager",
+            "id": "app",
+            "calls": [
+                {
+                    "method": "setLog"
+                }
+            ]
+        },
+        {
+            "interfaces": "pallo\\library\\database\\definition\\definer\\Definer",
+            "class": "pallo\\library\\database\\definition\\definer\\MysqlDefiner", 
+            "id": "mysql",
+            "calls": [
+                {
+                    "method": "setFieldTypes",
+                    "arguments": [
+                        {
+                            "name": "fieldTypes",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "database.mysql.types"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "pallo\\library\\database\\definition\\definer\\Definer",
+            "class": "pallo\\library\\database\\definition\\definer\\SqliteDefiner", 
+            "id": "sqlite",
+            "calls": [
+                {
+                    "method": "setFieldTypes",
+                    "arguments": [
+                        {
+                            "name": "fieldTypes",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "database.sqlite.types"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
