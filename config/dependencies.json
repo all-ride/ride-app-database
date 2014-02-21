@@ -1,8 +1,8 @@
 {
     "dependencies": [
         {
-            "interfaces": "pallo\\library\\database\\DatabaseManager",
-            "class": "pallo\\application\\database\\DatabaseManager",
+            "interfaces": "ride\\library\\database\\DatabaseManager",
+            "class": "ride\\application\\database\\DatabaseManager",
             "id": "app",
             "calls": [
                 {
@@ -11,8 +11,8 @@
             ]
         },
         {
-            "interfaces": "pallo\\library\\database\\definition\\definer\\Definer",
-            "class": "pallo\\library\\database\\definition\\definer\\MysqlDefiner", 
+            "interfaces": "ride\\library\\database\\definition\\definer\\Definer",
+            "class": "ride\\library\\database\\definition\\definer\\MysqlDefiner", 
             "id": "mysql",
             "calls": [
                 {
@@ -30,8 +30,8 @@
             ]
         },
         {
-            "interfaces": "pallo\\library\\database\\definition\\definer\\Definer",
-            "class": "pallo\\library\\database\\definition\\definer\\SqliteDefiner", 
+            "interfaces": "ride\\library\\database\\definition\\definer\\Definer",
+            "class": "ride\\library\\database\\definition\\definer\\SqliteDefiner", 
             "id": "sqlite",
             "calls": [
                 {

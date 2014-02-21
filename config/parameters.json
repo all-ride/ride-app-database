@@ -1,9 +1,9 @@
 {
     "database": {
         "driver": {
-            "mysql": "pallo\\library\\database\\driver\\PdoDriver",
-            "pgsql": "pallo\\library\\database\\driver\\PostgresPdoDriver",
-            "sqlite": "pallo\\library\\database\\driver\\PdoDriver"
+            "mysql": "ride\\library\\database\\driver\\PdoDriver",
+            "pgsql": "ride\\library\\database\\driver\\PostgresPdoDriver",
+            "sqlite": "ride\\library\\database\\driver\\PdoDriver"
         },
         "mysql": {
             "types": {
