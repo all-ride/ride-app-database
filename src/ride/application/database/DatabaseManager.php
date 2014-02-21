@@ -1,12 +1,12 @@
 <?php
 
-namespace pallo\application\database;
+namespace ride\application\database;
 
-use pallo\library\config\Config;
-use pallo\library\database\exception\DatabaseException;
-use pallo\library\database\DatabaseManager as LibDatabaseManager;
-use pallo\library\database\Dsn;
-use pallo\library\dependency\DependencyInjector;
+use ride\library\config\Config;
+use ride\library\database\exception\DatabaseException;
+use ride\library\database\DatabaseManager as LibDatabaseManager;
+use ride\library\database\Dsn;
+use ride\library\dependency\DependencyInjector;
 
 use \Exception;
 
@@ -35,20 +35,20 @@ class DatabaseManager extends LibDatabaseManager {
 
     /**
      * Instance of the dependency injector
-     * @var pallo\library\dependency\DependencyInjector
+     * @var ride\library\dependency\DependencyInjector
      */
     protected $dependencyInjector;
 
     /**
      * Instance of the configuration
-     * @var pallo\library\config\Config
+     * @var ride\library\config\Config
      */
     protected $config;
 
     /**
      * Constructs a database manager and loads the drivers and connections
      * from the configuration
-     * @param pallo\library\config\Config $config Instance of the configuration
+     * @param ride\library\config\Config $config Instance of the configuration
      * @return null
      */
     public function __construct(DependencyInjector $dependencyInjector, Config $config) {
@@ -107,7 +107,7 @@ class DatabaseManager extends LibDatabaseManager {
      * Sets the default connection
      * @param string $defaultConnectionName Name of the new default connection
      * @return null
-     * @throws pallo\library\database\exception\DatabaseException when the
+     * @throws ride\library\database\exception\DatabaseException when the
      * connection name is invalid or when the connection does not exist
      */
     public function setDefaultConnectionName($defaultConnectionName) {
@@ -121,9 +121,9 @@ class DatabaseManager extends LibDatabaseManager {
      * @param string $name Name of the connection
      * @param Dsn $dsn DSN connection properties
      * @return null
-     * @throws pallo\library\database\exception\DatabaseException when the name
+     * @throws ride\library\database\exception\DatabaseException when the name
      * is invalid or already registered and connected
-     * @throws pallo\library\database\exception\DatabaseException when the
+     * @throws ride\library\database\exception\DatabaseException when the
      * protocol has no driver available
      */
     public function registerConnection($name, Dsn $dsn) {
@@ -136,9 +136,9 @@ class DatabaseManager extends LibDatabaseManager {
      * Unregisters a connection from the manager
      * @param string $name Name of the connection
      * @return null
-     * @throws pallo\library\database\exception\DatabaseException when the
+     * @throws ride\library\database\exception\DatabaseException when the
      * name is invalid
-     * @throws pallo\library\database\exception\DatabaseException when no
+     * @throws ride\library\database\exception\DatabaseException when no
      * connection is registered with the provided name
      */
     public function unregisterConnection($name) {
@@ -158,9 +158,9 @@ class DatabaseManager extends LibDatabaseManager {
      * @param string $protocol Database protocol of this driver
      * @param string $className Class name of the driver
      * @return null
-     * @throws pallo\library\database\exception\DatabaseException when the
+     * @throws ride\library\database\exception\DatabaseException when the
      * protocol or class name is empty or invalid
-     * @throws pallo\library\database\exception\DatabaseException when the
+     * @throws ride\library\database\exception\DatabaseException when the
      * database driver does not exist or is not a valid driver class
      */
     public function registerDriver($protocol, $className) {
@@ -173,9 +173,9 @@ class DatabaseManager extends LibDatabaseManager {
      * Unregisters a driver from the manager
      * @param string $protocol Protocol of the connection
      * @return null
-     * @throws pallo\library\database\exception\DatabaseException when the
+     * @throws ride\library\database\exception\DatabaseException when the
      * protocol is invalid
-     * @throws pallo\library\database\exception\DatabaseException when no
+     * @throws ride\library\database\exception\DatabaseException when no
      * driver is registered with the provided protocol
      */
     public function unregisterDriver($protocol) {
@@ -199,7 +199,7 @@ class DatabaseManager extends LibDatabaseManager {
         }
 
         try {
-            $definer = $this->dependencyInjector->get('pallo\\library\\database\\definition\\definer\\Definer', $protocol);
+            $definer = $this->dependencyInjector->get('ride\\library\\database\\definition\\definer\\Definer', $protocol);
 
             $this->definers[$protocol] = $definer;
 
