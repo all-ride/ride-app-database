@@ -1,0 +1,4 @@
+database.connection.default         DSN or name of the default database connection.
+database.connection.%name%          DSN for a named database connection.
+database.driver.%protocol%          Full class name for the database driver of the protocol in the key.
+database.%protocol%.types.%type%    Database type for the protocol and generic field type in the key.
