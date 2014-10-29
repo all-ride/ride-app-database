@@ -9,7 +9,7 @@
             "types": {
                 "string": "varchar(255)",
                 "text": "text",
-                "serialize": "text",
+                "serialize": "blob",
                 "boolean": "tinyint(1)",
                 "integer": "int(11)",
                 "float": "float",
@@ -31,7 +31,7 @@
             "types": {
                 "string": "text",
                 "text": "text",
-                "serialize": "text",
+                "serialize": "blob",
                 "boolean": "integer",
                 "integer": "integer",
                 "float": "real",
